@@ -1,7 +1,7 @@
-FROM nginx:alpine
+FROM nginx:stable-alpine
 
 # Copy website files
 COPY . /usr/share/nginx/html
 
 EXPOSE 8080
-CMD [ "node", "src/server.js" ]
+CMD ["nginx", "-g", "daemon off;"]
